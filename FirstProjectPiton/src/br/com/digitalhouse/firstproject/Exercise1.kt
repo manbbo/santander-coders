@@ -6,7 +6,7 @@ fun main() {
 
 fun greaterThen(firstNum: Int, secondNum: Int, thirdNum: Int): Int {
     val listOfArrays = arrayListOf<Int>(firstNum, secondNum, thirdNum)
-    var greater = -1000
+    var greater = firstNum
 
     for (i in listOfArrays) {
         if (greater < i) {

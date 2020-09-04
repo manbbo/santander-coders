@@ -1,0 +1,44 @@
+// Criar uma pasta:
+mkdir nome_da_pasta
+
+// Entrar na pasta:
+cd nome_da_pasta
+
+// Sair da pasta:
+cd ..
+
+// Listagem simples:
+ls
+
+// Listagem completa:
+ls -la
+
+// Remover arquivo
+rm nome_arquivo.txt
+
+// Remover pasta
+rm -rf nome_da_pasta
+
+// Clonar um repositório já existente
+git clone https://github.com/repositorio
+
+// Verificar estado dos arquivos no repositório
+git status
+
+// Adicionar um arquivo no stage
+git add nome_do_arquivo
+
+// Adicionar todos os arquivos no stage
+git add .
+
+// Informar uma mensagem ao commitar o arquivo
+git commit –m “mensagem”
+
+// Enviar arquivos para o repositório
+git push
+
+// Atualizar arquivos no repositório local a partir do repositório remoto
+git pull
+
+
+

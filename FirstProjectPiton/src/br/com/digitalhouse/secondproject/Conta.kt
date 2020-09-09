@@ -1,6 +1,6 @@
 package br.com.digitalhouse.secondproject
 
-class Conta (val numero: Int, var saldo: Float, var titular: Cliente) {
+abstract class Conta (val numero: Int, var saldo: Float, var titular: Cliente) {
     init {
         println("Informações da conta:" +
                 "\n-----------------------------\n"+
@@ -9,18 +9,7 @@ class Conta (val numero: Int, var saldo: Float, var titular: Cliente) {
         "\n-----------------------------\n")
     }
 
-    fun deposito(valor: Float) {
-        saldo += valor
-        println("Saldo após o depósito: $saldo")
-    }
+    abstract fun deposito(valor: Float)
 
-    fun saque(valor: Float) {
-        if ((saldo - valor <= 0)) {
-            println("Saldo insuficiente para o saque")
-            return
-        }
-
-        saldo -= valor
-        println("Saldo após o saque: $saldo")
-    }
+    abstract fun saque(valor: Float)
 }

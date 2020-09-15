@@ -9,7 +9,7 @@ fun main() {
             Contrato("contrato.pdf", "PDF"))
 
     impressora1.printAll()
-    
+
     //Segundo jeito
     val impressora2 = Impressora()
     val foto = Foto("img.jpg", "JPG")

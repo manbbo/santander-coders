@@ -31,7 +31,8 @@ class GuardaVolumes(val dicionario: MutableMap<Int, List<Peca>>,
 
         for (i in dicionario[numero.minus(1)]!!)
             println("- Marca: ${i.marca}\n" +
-                    "- Modelo: ${i.modelo}\n")
+                    "- Modelo: ${i.modelo}\n" +
+                    "${i.retirada()}")
 
         dicionario.remove(numero.minus(1))
         println("\nDevolução concluída!\n")

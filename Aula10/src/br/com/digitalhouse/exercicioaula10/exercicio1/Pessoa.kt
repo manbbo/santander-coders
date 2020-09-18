@@ -10,4 +10,7 @@ package br.com.digitalhouse.exercicioaula10.exercicio1
 
 
 data class Pessoa(var nome: String, var RG: Int) {
+    override fun equals(other: Any?): Boolean {
+        return this.RG == other
+    }
 }

@@ -8,5 +8,5 @@ fun main(){
     val pessoa2 = Pessoa("Maria S",1114455887)
 
     println(pessoa1 == pessoa2)
-    println(pessoa1.RG == pessoa2.RG)
+    println(pessoa1.equals(pessoa2.RG))
 }

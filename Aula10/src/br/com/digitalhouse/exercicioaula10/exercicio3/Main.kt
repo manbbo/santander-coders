@@ -1,4 +1,4 @@
-package br.com.digitalhouse.exercicioaula10.exercicio4
+package br.com.digitalhouse.exercicioaula10.exercicio3
 
 fun main() {
     val alunos = listOf(Aluno1("Thalita", 1), Aluno1("Lucas", 2), Aluno1("Andre", 3), Aluno1("Jomar", 4))

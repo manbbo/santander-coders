@@ -1,4 +1,4 @@
-package br.com.digitalhouse.exercicioaula10.exercicio4
+package br.com.digitalhouse.exercicioaula10.exercicio3
 
 class Aluno1 (val nome: String, val numeroDeAluno: Int) {
 

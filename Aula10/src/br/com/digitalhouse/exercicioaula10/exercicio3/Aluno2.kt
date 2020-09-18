@@ -1,4 +1,4 @@
-package br.com.digitalhouse.exercicioaula10.exercicio4
+package br.com.digitalhouse.exercicioaula10.exercicio3
 
 data class Aluno2 (val nome: String, val numeroDeAluno: Int) {
     override fun equals(other: Any?): Boolean {

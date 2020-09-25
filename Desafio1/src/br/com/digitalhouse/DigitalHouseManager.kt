@@ -27,6 +27,18 @@ data class DigitalHouseManager (var listaDeAlunos: MutableList<Aluno> = mutableL
     }
     //////////////////////////
 
+    fun consultarCadastro(codigoAluno: Int) {
+        for (i in listaDeMatrs) {
+            if (i.equals(codigoAluno)) {
+                println("Cadastro do aluno ${i.aluno.nome}: \nCurso: ${i.curso.nome}\nData de Matricula: ${i.dataMatricula}")
+                return
+            }
+        }
+
+        println("Esse usuário não está matriculado ainda ou não existe")
+        //return
+    }
+
     // metodos de alocacao
     fun matricular(codigoAluno: Int, codCurso: Int)  {
         for (a in 0..listaDeAlunos.size-1) {
@@ -70,8 +82,6 @@ data class DigitalHouseManager (var listaDeAlunos: MutableList<Aluno> = mutableL
                 }
             }
         }
-        //println("Codigo de professor ou curso nao encontrado")
-        //return
     }
     //////////////////////////
 

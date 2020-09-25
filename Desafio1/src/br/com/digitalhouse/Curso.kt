@@ -6,6 +6,7 @@ data class Curso (val nome: String,
                   var titular: ProfessorTitular? = null,
                   var adjunto: ProfessorAdjunto? = null,
                   val listaDeAlunos: MutableList<Aluno>? = mutableListOf<Aluno>()) {
+
     override fun equals(other: Any?): Boolean {
         if (other == cod) {
             return true

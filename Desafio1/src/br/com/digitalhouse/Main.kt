@@ -31,4 +31,12 @@ fun main() {
     digitalHouseManager.matricular(2, 20002)
     digitalHouseManager.matricular(3, 20002)
     digitalHouseManager.matricular(4, 20002)
+
+    println("\n\n------Consultar Matricula dos Alunos")
+    digitalHouseManager.consultarCadastro(0)
+    digitalHouseManager.consultarCadastro(1)
+    digitalHouseManager.consultarCadastro(2)
+    digitalHouseManager.consultarCadastro(3)
+    digitalHouseManager.consultarCadastro(4)
+    //digitalHouseManager.consultarCadastro(0)
 }

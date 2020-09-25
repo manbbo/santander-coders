@@ -1,11 +1,8 @@
 package br.com.digitalhouse
 
-import java.util.*
+import java.time.LocalDate
 
 data class Matricula (val aluno: Aluno,
                       val curso: Curso,
-                      val dataMatricula: Date) {
-    init {
-        //dataMatricula = Date().
-    }
+                      var dataMatricula: LocalDate = LocalDate.now()) {
 }

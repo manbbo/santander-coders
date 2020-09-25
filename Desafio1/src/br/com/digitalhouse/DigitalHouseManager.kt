@@ -28,7 +28,7 @@ data class DigitalHouseManager (var listaDeAlunos: MutableList<Aluno> = mutableL
     //////////////////////////
 
     // metodos de alocacao
-    fun matricular(codigoAluno: Int, codCurso: Int) : Boolean {
+    fun matricular(codigoAluno: Int, codCurso: Int)  {
         for (a in 0..listaDeAlunos.size-1) {
             if (listaDeAlunos[a].equals(codigoAluno)) {
                 println("Aluno encontrado $codigoAluno")
@@ -38,34 +38,36 @@ data class DigitalHouseManager (var listaDeAlunos: MutableList<Aluno> = mutableL
                         if (listaDeCursos[c].addAluno(listaDeAlunos[a])) {
                             listaDeMatrs.add(Matricula(listaDeAlunos[a], listaDeCursos[c]))
                             println("Aluno matriculado com sucesso")
-                            return true
+                            return
                         } else {
-                            return false
+                            return
                         }
                     }
                 }
 
                 println("Curso nao encontrado")
-                return false
+                return
             }
         }
 
         println("Aluno nao encontrado $codigoAluno")
-        return false
+        return
     }
 
     fun alocarProf(codCurso: Int, codProfTitular: Int, codProfAdjunto: Int) {
-        for (c in listaDeCursos) {
-            if (c.equals(codCurso)) {
-                for (p in listaDeProfs) {
-                    if (p.equals(codProfAdjunto)) {
-                        c.addProf(p as ProfessorAdjunto)
+        for (c in 0..listaDeCursos.size-1) {
+            if (listaDeCursos[c].equals(codCurso)) {
+                for (p in 0..listaDeProfs.size-1) {
+                    if (listaDeProfs[p].equals(codProfAdjunto)) {
+                        listaDeCursos[c].addProf(listaDeProfs[p] as ProfessorAdjunto)
                         println("Professor $codProfAdjunto cadastrado com sucesso")
                         return
                     } else if (p.equals(codProfTitular)) {
-                        c.addProf(p as ProfessorTitular)
+                        listaDeCursos[c].addProf(listaDeProfs[p] as ProfessorTitular)
                         println("Professor $codProfTitular cadastrado com sucesso")
                         return
+                    } else {
+                        continue
                     }
                 }
 

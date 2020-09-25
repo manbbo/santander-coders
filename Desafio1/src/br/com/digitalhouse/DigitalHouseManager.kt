@@ -52,29 +52,26 @@ data class DigitalHouseManager (var listaDeAlunos: MutableList<Aluno> = mutableL
     }
 
     fun alocarProf(codCurso: Int, codProfTitular: Int, codProfAdjunto: Int) {
+        for (p in listaDeProfs) {
+            //println(p)
+            for (c in listaDeCursos) {
+                if (c.equals(codCurso)) {
+                    if (p.equals(codProfAdjunto)) {
+                        c.addProf(p as ProfessorAdjunto)
+                        println("Professor Adjunto $codProfAdjunto cadastrado com sucesso")
+                        //p = p.plus(1)
+                    }
 
-        for (p in 0..listaDeProfs.size-1) {
-            if (listaDeProfs[p].equals(codProfAdjunto)) {
-                for (c in 0..listaDeCursos.size-1) {
-                    if (listaDeCursos[c].equals(codCurso)) {
-                        listaDeCursos[c].addProf(listaDeProfs[p] as ProfessorAdjunto)
-                        println("Professor $codProfAdjunto cadastrado com sucesso")
-                        //return
+                    if (p.equals(codProfTitular)) {
+                        c.addProf(p as ProfessorTitular)
+                        println("Professor Titular $codProfTitular cadastrado com sucesso")
                     }
-                }
-            } else if (listaDeProfs[p].equals(codProfTitular)) {
-                for (c in 0..listaDeCursos.size-1) {
-                    if (listaDeCursos[c].equals(codCurso)) {
-                        listaDeCursos[c].addProf(listaDeProfs[p] as ProfessorTitular)
-                        println("Professor $codProfTitular cadastrado com sucesso")
-                        //return
-                    }
+                    continue
                 }
             }
         }
-
-        println("Codigo de curso ou de professor nao encontrado")
-        return
+        //println("Codigo de professor ou curso nao encontrado")
+        //return
     }
     //////////////////////////
 

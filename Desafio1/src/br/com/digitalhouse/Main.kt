@@ -14,8 +14,8 @@ fun main() {
     digitalHouseManager.registrarCurso("Android", 20002, 2)
 
     println("\n\n------Alocação dos Profs")
-    digitalHouseManager.alocarProf(20002, 0, 1)
-    digitalHouseManager.alocarProf(20001, 2, 3)
+    digitalHouseManager.alocarProf(20001, 0, 1)
+    digitalHouseManager.alocarProf(20002, 2, 3)
 
 
     println("\n\n------Registro dos Alunos")

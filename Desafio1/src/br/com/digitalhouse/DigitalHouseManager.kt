@@ -44,39 +44,36 @@ data class DigitalHouseManager (var listaDeAlunos: MutableList<Aluno> = mutableL
                         }
                     }
                 }
-
-                println("Curso nao encontrado")
-                return
             }
         }
 
-        println("Aluno nao encontrado $codigoAluno")
+        println("Aluno ou Curso nao encontrado $codigoAluno")
         return
     }
 
     fun alocarProf(codCurso: Int, codProfTitular: Int, codProfAdjunto: Int) {
-        for (c in 0..listaDeCursos.size-1) {
-            if (listaDeCursos[c].equals(codCurso)) {
-                for (p in 0..listaDeProfs.size-1) {
-                    if (listaDeProfs[p].equals(codProfAdjunto)) {
+
+        for (p in 0..listaDeProfs.size-1) {
+            if (listaDeProfs[p].equals(codProfAdjunto)) {
+                for (c in 0..listaDeCursos.size-1) {
+                    if (listaDeCursos[c].equals(codCurso)) {
                         listaDeCursos[c].addProf(listaDeProfs[p] as ProfessorAdjunto)
                         println("Professor $codProfAdjunto cadastrado com sucesso")
-                        return
-                    } else if (p.equals(codProfTitular)) {
-                        listaDeCursos[c].addProf(listaDeProfs[p] as ProfessorTitular)
-                        println("Professor $codProfTitular cadastrado com sucesso")
-                        return
-                    } else {
-                        continue
+                        //return
                     }
                 }
-
-                println("Codigo de professor nao encontrado")
-                return
+            } else if (listaDeProfs[p].equals(codProfTitular)) {
+                for (c in 0..listaDeCursos.size-1) {
+                    if (listaDeCursos[c].equals(codCurso)) {
+                        listaDeCursos[c].addProf(listaDeProfs[p] as ProfessorTitular)
+                        println("Professor $codProfTitular cadastrado com sucesso")
+                        //return
+                    }
+                }
             }
         }
 
-        println("Codigo de curso nao encontrado")
+        println("Codigo de curso ou de professor nao encontrado")
         return
     }
     //////////////////////////

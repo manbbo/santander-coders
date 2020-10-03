@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Santander Coders - Digital House</string>
-    <string name="firstString">Oi! Eu sou o goku</string>
+    <!--First Screen-->
+    <string name="app_name">GUESS GAME</string>
+    <string name="btstart">Jogar Agora!</string>
+    <!--Second Screen-->
+    <string name="hinttext">Adivinhe o Número</string>
+    <string name="btguess">ADIVINHAR</string>
+
 </resources>

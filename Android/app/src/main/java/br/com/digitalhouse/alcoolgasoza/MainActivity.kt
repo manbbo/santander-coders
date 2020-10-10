@@ -13,9 +13,11 @@ class MainActivity : AppCompatActivity() {
         comparar.setOnClickListener(
             object : View.OnClickListener{
                 override fun onClick(v: View?) {
+                    var valorEtanol = etanol.text.toString().trim().toFloat()
+                    var valorGasosa = gasosa.text.toString().trim().toFloat()
 
-                    if (etanol.text.toString().toFloat() <
-                        (gasosa.toString().toFloat() * 0.7)) {
+                    if (valorEtanol <
+                        (valorGasosa * 0.7)) {
                         compre.setImageResource(R.drawable.abasteca_etanol)
 
                     } else {

@@ -57,18 +57,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/resultado"/>
+            android:text="@string/resultado"
+            android:textColor="@color/colorPrimary"/>
         <ImageView
+            android:layout_gravity="start"
             android:id="@+id/compre"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="100dp"/>
 
     </LinearLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/green"
-        app:rippleColor="@color/green"
         android:backgroundTint="@color/green"
         android:layout_gravity="end"
         android:src="@drawable/ic_star"

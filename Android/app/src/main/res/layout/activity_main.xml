@@ -67,8 +67,6 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/green"
-        app:rippleColor="@color/green"
         android:backgroundTint="@color/green"
         android:layout_gravity="end"
         android:src="@drawable/ic_star"

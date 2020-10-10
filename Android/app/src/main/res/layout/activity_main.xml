@@ -60,9 +60,10 @@
             android:text="@string/resultado"
             android:textColor="@color/colorPrimary"/>
         <ImageView
+            android:layout_gravity="start"
             android:id="@+id/compre"
             android:layout_width="match_parent"
-            android:layout_height="60dp"/>
+            android:layout_height="100dp"/>
 
     </LinearLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -10,9 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         
-        comparar.setOnClickListener(
-            object : View.OnClickListener{
-                override fun onClick(v: View?) {
+        comparar.setOnClickListener{
                     var valorEtanol = etanol.text.toString().trim().toFloat()
                     var valorGasosa = gasosa.text.toString().trim().toFloat()
 
@@ -23,6 +21,6 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         compre.setImageResource(R.drawable.abasteca_gasolina)
                     }
-                }})
+                }
     }
 }

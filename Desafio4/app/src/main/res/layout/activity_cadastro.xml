@@ -7,14 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".CadastroActivity">
 
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/cadastro">
 
             <include
+                android:id="@+id/includetoolbar"
+                layout="@layout/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="10dp"
+                />
+
+            <include
                 android:id="@+id/include"
-                layout="@layout/login_top"
+                layout="@layout/top"
                 android:layout_width="match_parent"
                 android:layout_height="290dp"
                 app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +33,7 @@
 
             <include
                 android:id="@+id/cadastrobody"
-                layout="@layout/login_body"
+                layout="@layout/cadastro_body"
                 android:layout_width="match_parent"
                 android:layout_height="450dp"
                 android:layout_margin="10dp"

@@ -2,6 +2,7 @@ package com.example.snackbar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -10,8 +11,19 @@ class CadastroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
 
-        setSupportActionBar(my_toolbar)
         my_toolbar.title = "CADASTRAR"
         my_toolbar.navigationIcon = ContextCompat.getDrawable(this, R.drawable.ic_backbt)
+
+
+        setSupportActionBar(my_toolbar)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        //item1.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_launcher);
+        return super.onCreateOptionsMenu(menu)
     }
 }

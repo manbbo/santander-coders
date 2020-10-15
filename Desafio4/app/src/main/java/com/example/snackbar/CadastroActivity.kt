@@ -23,7 +23,6 @@ class CadastroActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
-        //item1.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_launcher);
         return super.onCreateOptionsMenu(menu)
     }
 }

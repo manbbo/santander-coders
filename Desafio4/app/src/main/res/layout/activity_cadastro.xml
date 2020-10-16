@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/act_cadastro"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:fillViewport="true"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".CadastroActivity">
 
+    <include
+        android:id="@+id/includetoolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/cadastro">
-
-
 
             <include
                 android:id="@+id/include"
@@ -45,13 +55,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/logo_bugcode" />
 
-            <include
-                android:id="@+id/includetoolbar"
-                layout="@layout/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="10dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    </LinearLayout>

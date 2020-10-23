@@ -4,6 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity"
+    android:backgroundTint="@color/colorAccent">
 
+    <include
+        android:id="@+id/includetoolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/includetoolbar"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/colorWhite"
+        app:tabIndicatorHeight="1.6dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/colorRed"
+        app:tabTextColor="@color/colorWhite" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/includetoolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

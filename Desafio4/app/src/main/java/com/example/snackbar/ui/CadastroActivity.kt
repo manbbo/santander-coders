@@ -1,19 +1,14 @@
-package com.example.snackbar
+package com.example.snackbar.ui
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.Menu
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.widget.addTextChangedListener
-import androidx.core.widget.doAfterTextChanged
-import androidx.core.widget.doOnTextChanged
+import com.example.snackbar.R
 import com.example.snackbar.domain.Usuario
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_cadastro.*

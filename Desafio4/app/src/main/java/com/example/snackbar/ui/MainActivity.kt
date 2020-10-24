@@ -1,6 +1,8 @@
 package com.example.snackbar.ui
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
@@ -34,6 +36,9 @@ class MainActivity : AppCompatActivity() {
 
         navigationView!!.addTab(navigationView.newTab().setText("Home"))
         navigationView!!.getTabAt(0)!!.setIcon(R.drawable.ic_home)
+        navigationView!!.getTabAt(0)!!.icon!!.setColorFilter(ContextCompat.getColor(
+                navigationView.context, R.color.colorRed),
+                PorterDuff.Mode.SRC_IN)
 
         navigationView!!.addTab(navigationView.newTab().setText("Entradas"))
         navigationView!!.getTabAt(1)!!.setIcon(R.drawable.ic_entries)
@@ -41,7 +46,9 @@ class MainActivity : AppCompatActivity() {
         navigationView!!.addTab(navigationView.newTab().setText("Gastos"))
         navigationView!!.getTabAt(2)!!.setIcon(R.drawable.ic_money)
 
-        navigationView!!.tabGravity = TabLayout.GRAVITY_FILL
+        navigationView!!.isInlineLabel = true
+        navigationView.tabGravity = TabLayout.GRAVITY_FILL
+        navigationView.setSelectedTabIndicatorColor(Color.WHITE)
 
         var adapter = MyAdapter(this,
             supportFragmentManager,
@@ -53,12 +60,23 @@ class MainActivity : AppCompatActivity() {
         navigationView!!.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 viewPager!!.currentItem = tab.position
+
+                val tabIconColor = ContextCompat.getColor(
+                        navigationView.context, R.color.colorRed)
+
+                tab.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
             }
             override fun onTabUnselected(tab: TabLayout.Tab) {
+                val tabIconColor = ContextCompat.getColor(
+                        navigationView.context, R.color.colorWhite)
 
+                tab.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
             }
             override fun onTabReselected(tab: TabLayout.Tab) {
+                val tabIconColor = ContextCompat.getColor(
+                        navigationView.context, R.color.colorRed)
 
+                tab.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
             }
         })
     }

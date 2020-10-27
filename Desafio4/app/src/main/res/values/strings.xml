@@ -16,7 +16,11 @@
     <string name="home_ano">ANO</string>
 
     <string name="entries">ENTRADAS</string>
-    <string name="spending">GASTOS</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spending">CADASTRAR</string>
+
+    <string name="til_descr">Descrição</string>
+    <string name="til_cat">Categoria</string>
+    <string name="til_date">Data - Hora</string>
+    <string name="til_valor">Valor</string>
+
 </resources>

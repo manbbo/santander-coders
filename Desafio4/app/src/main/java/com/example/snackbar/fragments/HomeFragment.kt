@@ -26,8 +26,8 @@ class HomeFragment: Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         var view = inflater.inflate(R.layout.fragment_home, container, false)
 
@@ -44,16 +44,15 @@ class HomeFragment: Fragment() {
         return view
 
         card!!.setBackgroundColor(ContextCompat.getColor(card!!.context,
-            R.color.colorOrange))
+                R.color.colorOrange))
         card_title!!.text = "Gastos"
     }
 
     companion object {
-        fun newInstance() =
+        @JvmStatic
+        fun newInstance(bundle: Bundle?) =
                 HomeFragment().apply {
-                    arguments = Bundle().apply {
-
-                    }
+                    arguments = bundle
                 }
     }
 }

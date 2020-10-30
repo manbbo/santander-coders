@@ -42,11 +42,10 @@ class SpendingFragment: Fragment() {
                 if (s.toString() != current) {
                     inflator.edValor.removeTextChangedListener(this)
 
-                    val cleanString: String = s.replace("""[$,.]""".toRegex(), "")
+                    val cleanString: String = s.replace("[$,.]".toRegex(), "")
 
                     val parsed = cleanString.toDouble()
-                    val mLocale = Locale("pt", "BR")
-                    val formatted = NumberFormat.getCurrencyInstance(mLocale).format((parsed / 100))
+                    val formatted = NumberFormat.getCurrencyInstance().format((parsed/100))
 
                     current = formatted
                     inflator.edValor.setText(formatted)

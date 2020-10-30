@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ProfileActivity"
-    android:orientation="vertical">
+    tools:context=".ui.ProfileActivity">
 
     <include
         android:id="@+id/include"
@@ -37,27 +36,33 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="130dp">
+
             <ImageButton
+                android:id="@+id/imageButton"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_camera"
-                android:gravity="center"
                 android:background="@drawable/round_login_body"
                 android:backgroundTint="@color/colorGreyAccent"
+                android:contentDescription="Photo"
+                android:gravity="center"
+                android:src="@drawable/ic_camera"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"/>
+                tools:ignore="MissingConstraints" />
 
             <ImageButton
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:background="@drawable/round_login_body"
                 android:backgroundTint="@color/colorWhite"
+                android:contentDescription="Photo"
                 android:src="@drawable/ic_add"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="253dp"
-                tools:layout_editor_absoluteY="100dp" />
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+                app:layout_constraintEnd_toEndOf="@+id/imageButton"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/imageButton"
+                tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         <TextView
@@ -65,14 +70,14 @@
             android:layout_height="wrap_content"
             android:text="@string/profile_name"
             android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:gravity="center"
             android:textColor="@color/colorWhite"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/profile_email"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:gravity="center"
             android:textColor="@color/colorWhite"/>
     </LinearLayout>
@@ -90,7 +95,7 @@
             android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_username"
             android:drawableRight="@drawable/ic_goto"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:id="@+id/change_username"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -100,7 +105,7 @@
             android:layout_marginBottom="10dp"
             android:drawableLeft="@drawable/ic_password"
             android:drawableRight="@drawable/ic_goto"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:id="@+id/change_password"
             android:layout_width="match_parent"
             android:layout_height="50dp"

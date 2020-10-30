@@ -18,7 +18,6 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
 
         val intent = Intent().extras
-        setContentView(R.layout.activity_main)
 
         my_toolbar.title = "Profile"
         my_toolbar.navigationIcon = ContextCompat.getDrawable(this, R.drawable.ic_backbt)

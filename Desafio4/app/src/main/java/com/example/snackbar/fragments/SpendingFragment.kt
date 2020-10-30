@@ -1,24 +1,22 @@
 package com.example.snackbar.fragments
 
-import android.icu.text.DateFormat
-import android.icu.text.DecimalFormat
+import android.R.attr.editable
+import android.icu.math.BigDecimal
 import android.icu.text.NumberFormat
-import android.icu.text.SimpleDateFormat
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.EditText
+import androidx.fragment.app.Fragment
 import com.example.snackbar.R
-import kotlinx.android.synthetic.main.fragment_spending.*
 import kotlinx.android.synthetic.main.fragment_spending.view.*
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeFormatterBuilder
+import java.util.*
+
 
 class SpendingFragment: Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,15 +24,16 @@ class SpendingFragment: Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         var inflator = inflater.inflate(R.layout.fragment_spending, container, false)
 
         inflator.edValor.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                //Toast.makeText(SpendingFragment().context, "asdasd", Toast.LENGTH_SHORT).show()
+
             }
+
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             private var current: String = ""
@@ -43,10 +42,11 @@ class SpendingFragment: Fragment() {
                 if (s.toString() != current) {
                     inflator.edValor.removeTextChangedListener(this)
 
-                    val cleanString: String = s.replace("""[R\$,.]""".toRegex(), "")
+                    val cleanString: String = s.replace("""[$,.]""".toRegex(), "")
 
                     val parsed = cleanString.toDouble()
-                    val formatted = NumberFormat.getCurrencyInstance().format((parsed / 100))
+                    val mLocale = Locale("pt", "BR")
+                    val formatted = NumberFormat.getCurrencyInstance(mLocale).format((parsed / 100))
 
                     current = formatted
                     inflator.edValor.setText(formatted)

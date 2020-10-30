@@ -23,4 +23,10 @@
     <string name="til_date">Data - Hora</string>
     <string name="til_valor">Valor</string>
 
+    <string name="profile_name">Andre Saba</string>
+    <string name="profile_email">andre_saba@email.com</string>
+    <string name="profile_updateusername">Mudar Username</string>
+    <string name="profile_updatepass">Alterar Senha</string>
+    <string name="profile_support">Suporte</string>
+    <string name="profile_logout">Sair</string>
 </resources>

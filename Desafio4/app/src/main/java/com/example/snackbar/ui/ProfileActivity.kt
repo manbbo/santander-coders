@@ -17,6 +17,19 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        val intent = Intent().extras
+        setContentView(R.layout.activity_main)
+
+        my_toolbar.title = "Profile"
+        my_toolbar.navigationIcon = ContextCompat.getDrawable(this, R.drawable.ic_backbt)
+
+        setSupportActionBar(my_toolbar)
+
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        my_toolbar.setNavigationOnClickListener {
+            finish()
+        }
     }
 }

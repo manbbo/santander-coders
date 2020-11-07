@@ -1,6 +1,8 @@
 package com.example.snackbar.fragments
 
 import android.R.attr.editable
+import android.content.Context
+import android.content.Intent
 import android.icu.math.BigDecimal
 import android.icu.text.NumberFormat
 import android.os.Bundle
@@ -12,6 +14,10 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.example.snackbar.R
+import com.example.snackbar.domain.Gastos
+import com.example.snackbar.fragments.spending.DetailGastosFragment
+import com.example.snackbar.fragments.spending.DetailsGastosAdapter
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_spending.view.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -56,6 +62,23 @@ class SpendingFragment: Fragment() {
         })
 
         inflator.edDataHora.setText(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy H:mm")).toString())
+
+        var intent = Intent(inflator.context,  DetailGastosFragment::class.java)
+
+        inflator.btn_cadastrar.setOnClickListener {
+            if (!inflator.edValor.text!!.isNullOrEmpty() &&
+                    !inflator.edCategoria.text!!.isNullOrEmpty() &&
+                !inflator.edDescricao.text!!.isNullOrEmpty()) {
+                intent.putExtra("descricao", inflator.edDescricao.text.toString())
+                intent.putExtra("categoria", inflator.edCategoria.text.toString())
+                intent.putExtra("datahora", inflator.edDataHora.text.toString())
+                intent.putExtra("valor", inflator.edValor.text.toString())
+            }
+        }
+
+        inflator.btn_viewall.setOnClickListener {
+            startActivity(intent)
+        }
 
         return inflator
     }

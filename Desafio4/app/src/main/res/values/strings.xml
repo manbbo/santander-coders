@@ -10,13 +10,13 @@
     <string name="btn_cad">Cadastrar</string>
     <string name="tv_info">Não tem conta? Cadastre-se</string>
 
-    <string name="home">ÚLTIMAS TRANSAÇÕES</string>
     <string name="home_sem">SEM</string>
     <string name="home_mes">MÊS</string>
     <string name="home_ano">ANO</string>
 
     <string name="entries">ENTRADAS</string>
     <string name="spending">CADASTRAR</string>
+    <string name="spending_viewall">TODAS TRANSAÇÕES</string>
 
     <string name="til_descr">Descrição</string>
     <string name="til_cat">Categoria</string>
@@ -30,4 +30,8 @@
     <string name="profile_support">Suporte</string>
     <string name="profile_logout">Sair</string>
     <string name="profile_info">Informação</string>
+
+    <string name="gastos_bt_editar">EDITAR</string>
+    <string name="gastos_bt_remover">REMOVER</string>
+
 </resources>

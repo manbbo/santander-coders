@@ -25,6 +25,7 @@
             android:value="false" />
 
         <activity android:name=".ui.CadastroActivity" />
+        <activity android:name=".fragments.spending.DetailGastosFragment" />
         <activity
             android:name=".ui.LoginActivity"
             android:windowSoftInputMode="adjustResize">

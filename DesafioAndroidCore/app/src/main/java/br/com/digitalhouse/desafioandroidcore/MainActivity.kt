@@ -3,7 +3,6 @@ package br.com.digitalhouse.desafioandroidcore
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
 import kotlinx.android.synthetic.main.login_body.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,11 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn_login.setOnClickListener {
+        btn_login!!.setOnClickListener {
             startActivity(Intent(this, HomeActivity::class.java))
         }
 
-        btn_register.setOnClickListener {
+        btn_register!!.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
         }
     }

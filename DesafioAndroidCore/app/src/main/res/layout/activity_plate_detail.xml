@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FoodDetailsActivity">
+    tools:context=".PlateDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,14 +13,13 @@
         android:orientation="vertical">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".FoodDetailsActivity">
+            android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/img_plate_detailed"
                 android:layout_width="match_parent"
                 android:layout_height="342dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image1"
+                android:src="@drawable/image4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,33 +40,21 @@
                 android:id="@+id/tv_plate_name_detailed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tony Roma's"
-                android:textSize="36dp"
                 android:layout_marginLeft="24dp"
+                android:text="Salada com molho de Gengibre"
+                android:textSize="36dp"
                 android:textColor="@color/White"
                 android:layout_marginBottom="11dp"
                 app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_marginTop="33dp"
-                android:layout_marginLeft="19dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/food_mainplates"
-                android:textSize="36dp"
-                android:textStyle="bold"
-                android:textColor="@color/StrongGrey"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rc_view_twocolumn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                tools:listitem="@layout/detailed_food_item" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/plate_description"
+            android:layout_marginTop="33dp"
+            android:layout_marginLeft="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."
+            android:textSize="24dp"
+            android:textColor="@color/Grey"/>
     </LinearLayout>
 </ScrollView>

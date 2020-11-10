@@ -1,10 +1,10 @@
-package br.com.digitalhouse.desafioandroidcore
+package br.com.digitalhouse.desafioandroidcore.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.os.Handler
-import android.view.WindowManager
+import br.com.digitalhouse.desafioandroidcore.R
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT:Long=3000 // 3 sec
@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, SPLASH_TIME_OUT)
     }

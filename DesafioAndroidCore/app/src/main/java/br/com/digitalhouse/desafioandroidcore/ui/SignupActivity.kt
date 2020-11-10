@@ -1,8 +1,9 @@
-package br.com.digitalhouse.desafioandroidcore
+package br.com.digitalhouse.desafioandroidcore.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.digitalhouse.desafioandroidcore.R
 import kotlinx.android.synthetic.main.signup_body.*
 
 class SignupActivity : AppCompatActivity() {

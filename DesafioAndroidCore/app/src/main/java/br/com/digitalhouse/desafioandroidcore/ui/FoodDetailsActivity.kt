@@ -1,13 +1,12 @@
-package br.com.digitalhouse.desafioandroidcore
+package br.com.digitalhouse.desafioandroidcore.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import br.com.digitalhouse.desafioandroidcore.R
 import br.com.digitalhouse.desafioandroidcore.adapters.FoodDetailedAdapter
 import br.com.digitalhouse.desafioandroidcore.data.FoodCardInfo
 import kotlinx.android.synthetic.main.activity_food_details.*
-import kotlinx.android.synthetic.main.activity_home.*
 
 class FoodDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

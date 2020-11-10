@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:backgroundTint="@color/LightGrey"
-    tools:context=".HomeActivity">
+    tools:context=".ui.HomeActivity">
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

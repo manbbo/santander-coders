@@ -2,14 +2,13 @@ package br.com.digitalhouse.desafioandroidcore.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import br.com.digitalhouse.desafioandroidcore.FoodDetailsActivity
+import br.com.digitalhouse.desafioandroidcore.ui.FoodDetailsActivity
 import br.com.digitalhouse.desafioandroidcore.R
 import br.com.digitalhouse.desafioandroidcore.data.FoodCardInfo
 import kotlinx.android.synthetic.main.food_item.view.*

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FoodDetailsActivity">
+    tools:context=".ui.FoodDetailsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".FoodDetailsActivity">
+            tools:context=".ui.FoodDetailsActivity">
             <ImageView
                 android:id="@+id/img_plate_detailed"
                 android:layout_width="match_parent"

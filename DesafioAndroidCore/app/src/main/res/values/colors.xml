@@ -4,6 +4,7 @@
     <color name="PrimaryDark">#303F9F</color>
     <color name="Accent">#FF5252</color>
     <color name="Grey">#8492A6</color>
+    <color name="StrongGrey">#5A6978</color>
     <color name="LightGrey">#DDDDDD</color>
     <color name="Black">#FF000000</color>
     <color name="White">#FFFFFFFF</color>

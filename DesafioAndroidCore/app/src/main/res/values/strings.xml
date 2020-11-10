@@ -9,4 +9,5 @@
     <string name="bt_login">LOG IN</string>
     <string name="bt_register">REGISTER</string>
 
+    <string name="food_mainplates">Pratos principais</string>
 </resources>

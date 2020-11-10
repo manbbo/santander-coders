@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.digitalhouse.desafioandroidcore.adapters.FoodCardAdapter
 import br.com.digitalhouse.desafioandroidcore.data.FoodCardInfo
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlin.system.exitProcess
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

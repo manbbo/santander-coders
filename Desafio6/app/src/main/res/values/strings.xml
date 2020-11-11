@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Digital House Foods</string>
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_repeat_password">Repeate password</string>
+
+    <string name="bt_login">LOG IN</string>
+    <string name="bt_register">REGISTER</string>
+
+    <string name="food_mainplates">Pratos principais</string>
+</resources>

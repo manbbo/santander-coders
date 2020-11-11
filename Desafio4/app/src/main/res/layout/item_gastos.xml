@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="85dp">
+
+    <!--Descrição-->
+    <TextView
+        android:id="@+id/item_descr"
+        android:gravity="start"
+        android:text="@string/til_descr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <!--Categoria-->
+    <TextView
+        android:id="@+id/item_cat"
+        android:text="@string/til_cat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!--DataHora-->
+    <TextView
+        android:id="@+id/item_date"
+        android:text="@string/til_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <!--Valor-->
+    <TextView
+        android:id="@+id/item_valor"
+        android:text="@string/til_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

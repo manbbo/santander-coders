@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/frag_home"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment"
     android:background="@drawable/round_login_body"
@@ -20,11 +21,4 @@
         android:layout_height="200dp"
         android:layout_width="360dp"/>
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home"
-        android:textSize="22dp"
-        android:layout_margin="10dp"/>
 </LinearLayout>

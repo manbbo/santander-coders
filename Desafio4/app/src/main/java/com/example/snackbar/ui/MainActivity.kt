@@ -10,12 +10,16 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
-import com.example.snackbar.MainActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.snackbar.fragments.MyAdapter
 import com.example.snackbar.R
 import com.example.snackbar.domain.Usuario
+import com.example.snackbar.fragments.spending.DetailGastosFragment
+import com.example.snackbar.fragments.spending.DetailsGastosAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.login_body.*
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -49,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         navigationView!!.addTab(navigationView.newTab().setText("Home"))
         navigationView!!.getTabAt(0)!!.setIcon(R.drawable.ic_home)
         navigationView!!.getTabAt(0)!!.icon!!.setColorFilter(ContextCompat.getColor(
-                navigationView.context, R.color.colorRed),
+                navigationView.context, R.color.colorPurple),
                 PorterDuff.Mode.SRC_IN)
 
         navigationView!!.addTab(navigationView.newTab().setText("Entradas"))
@@ -74,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                 viewPager!!.currentItem = tab.position
 
                 val tabIconColor = ContextCompat.getColor(
-                        navigationView.context, R.color.colorRed)
+                        navigationView.context, R.color.colorPurple)
 
                 tab.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
             }
@@ -86,7 +90,7 @@ class MainActivity : AppCompatActivity() {
             }
             override fun onTabReselected(tab: TabLayout.Tab) {
                 val tabIconColor = ContextCompat.getColor(
-                        navigationView.context, R.color.colorRed)
+                        navigationView.context, R.color.colorPurple)
 
                 tab.icon!!.setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN)
             }

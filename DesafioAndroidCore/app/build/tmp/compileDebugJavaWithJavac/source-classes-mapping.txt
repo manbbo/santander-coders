@@ -1,2 +1,0 @@
-br/com/digitalhouse/desafioandroidcore/BuildConfig.java
- br.com.digitalhouse.desafioandroidcore.BuildConfig

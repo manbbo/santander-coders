@@ -19,7 +19,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import br.com.digitalhouse.desafio7_2.viewmodels.MainViewModel
 import br.com.digitalhouse.desafio7_2.ui.Desafio72Theme
 import br.com.digitalhouse.desafio7_2.viewmodels.MovieViewModel
 
@@ -38,14 +37,18 @@ class MainActivity : AppCompatActivity() {
                             LazyColumnFor(viewModeler.getListFilmes()) { item ->
                                 Column(modifier = Modifier.clickable(onClick = {
                                     Toast.makeText(baseContext, "${item.titulo}",
-                                        Toast.LENGTH_SHORT).show() }).fillParentMaxWidth().height(100.dp)) {
+                                        Toast.LENGTH_SHORT).show() }).fillParentMaxWidth().height(100.dp).padding(vertical = 10.dp)) {
 
                                     Text(text = "ID: " + item.id.toString())
 
                                     Text(text = "TITULO: " + item.titulo)
 
                                     Text(text = "SINOPSE: " + item.sinopse)
+
                                 }
+
+
+                                Divider(thickness = 1.dp)
                             }
                         }
                     },

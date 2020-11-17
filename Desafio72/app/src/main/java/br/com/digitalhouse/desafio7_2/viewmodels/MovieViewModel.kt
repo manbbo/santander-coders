@@ -3,7 +3,6 @@ package br.com.digitalhouse.desafio7_2.viewmodels
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import br.com.digitalhouse.desafio7_2.models.Filme
-import br.com.digitalhouse.desafio7_2.models.Gastos
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

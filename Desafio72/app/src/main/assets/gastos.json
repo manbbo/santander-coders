@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "desc": "Transporte",
+    "valor": 5.00
+  },
+  {
+    "id": 1,
+    "desc": "Alimentaçao",
+    "valor": 10.00
+  },
+  {
+    "id": 2,
+    "desc": "Perdi na Rua",
+    "valor": 200.00
+  },
+  {
+    "id": 3,
+    "desc": "Lazer",
+    "valor": 15.23
+  }
+]

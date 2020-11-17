@@ -7,15 +7,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Icon
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import br.com.digitalhouse.desafio7_2.viewmodels.MainViewModel
 import br.com.digitalhouse.desafio7_2.ui.Desafio72Theme
@@ -32,17 +34,17 @@ class MainActivity : AppCompatActivity() {
                 Scaffold(
                     topBar = { topBar() },
                     bodyContent = {
-                        Box() {
+                        Box(modifier = Modifier.fillMaxSize()) {
                             LazyColumnFor(viewModeler.getListFilmes()) { item ->
                                 Column(modifier = Modifier.clickable(onClick = {
-                                    Toast.makeText(baseContext, "sdasd",
-                                        Toast.LENGTH_SHORT).show() })) {
+                                    Toast.makeText(baseContext, "${item.titulo}",
+                                        Toast.LENGTH_SHORT).show() }).fillParentMaxWidth().height(100.dp)) {
 
-                                    Text(text = item.id.toString())
+                                    Text(text = "ID: " + item.id.toString())
 
-                                    Text(text = item.titulo)
+                                    Text(text = "TITULO: " + item.titulo)
 
-                                    Text(text = item.sinopse)
+                                    Text(text = "SINOPSE: " + item.sinopse)
                                 }
                             }
                         }
@@ -57,5 +59,6 @@ class MainActivity : AppCompatActivity() {
 @Preview
 fun topBar() {
     TopAppBar(
-        title = { Text(text = "Filmes") })
+        title = { Text(text = "Filmes") },
+        navigationIcon = { Icon(asset = Icons.Default.Home) })
 }

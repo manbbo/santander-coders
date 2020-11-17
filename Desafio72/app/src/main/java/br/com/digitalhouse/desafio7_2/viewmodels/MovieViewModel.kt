@@ -12,7 +12,7 @@ class MovieViewModel(app: Application): AndroidViewModel(app) {
 
     fun getListFilmes(): List<Filme>{
 
-        val jsonString = context.assets.open("gastos.json")
+        val jsonString = context.assets.open("filmes.json")
                 .bufferedReader()
                 .use { it.readText() }
 

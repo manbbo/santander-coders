@@ -34,21 +34,15 @@ class MainActivity : AppCompatActivity() {
                     bodyContent = {
                         Box() {
                             LazyColumnFor(viewModeler.getListFilmes()) { item ->
-                                Column {
-                                    Text(text = item.id.toString(),
-                                        modifier = Modifier.clickable(onClick = {
-                                            Toast.makeText(baseContext, "sdasd", Toast.LENGTH_SHORT).show()
-                                        }))
+                                Column(modifier = Modifier.clickable(onClick = {
+                                    Toast.makeText(baseContext, "sdasd",
+                                        Toast.LENGTH_SHORT).show() })) {
 
-                                    Text(text = item.titulo,
-                                        modifier = Modifier.clickable(onClick = {
-                                            Toast.makeText(baseContext, "sdasd", Toast.LENGTH_SHORT).show()
-                                        }))
+                                    Text(text = item.id.toString())
 
-                                    Text(text = item.sinopse,
-                                        modifier = Modifier.clickable(onClick = {
-                                            Toast.makeText(baseContext, "sdasd", Toast.LENGTH_SHORT).show()
-                                        }))
+                                    Text(text = item.titulo)
+
+                                    Text(text = item.sinopse)
                                 }
                             }
                         }
@@ -63,6 +57,5 @@ class MainActivity : AppCompatActivity() {
 @Preview
 fun topBar() {
     TopAppBar(
-        title = { Text(text = "Filmes") },
-        navigationIcon = { Icon(asset = Icons.Default.Refresh) })
+        title = { Text(text = "Filmes") })
 }

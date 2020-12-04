@@ -22,9 +22,11 @@ data class Results(
     val stories: Stories,
     val textObjects: List<TextObject>,
     val thumbnail: Thumbnail,
+    val prices: List<Price>,
     val title: String,
     val upc: String,
     val urls: List<Url>,
     val variantDescription: String,
     val variants: List<Any>
-) : Serializable
+) : Serializable {
+}

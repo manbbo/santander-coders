@@ -53,6 +53,8 @@ class DetailActivity : AppCompatActivity() {
             val date = dateFormat.format(simpleDateFormat.parse((comic.dates.find { s -> s.type == "focDate" })?.date.toString()))
 
             comic_published.text = date
+            comic_price.text = comic.prices[0].price.toString()
+            comic_pages.text = comic.pageCount.toString()
 
             Glide.with(this)
                 .load("${comic.thumbnail.path}.${comic.thumbnail.extension}")
@@ -60,14 +62,14 @@ class DetailActivity : AppCompatActivity() {
                 .placeholder(R.drawable.marvel_logo)
                 .error(R.drawable.raster)
                 .fallback(R.drawable.raster)
-                .into(iv_bkg)
+                .into(iv_comic)
 
             Glide.with(this)
-                .load("${comic.thumbnail.path}.${comic.thumbnail.extension}")
+                .load("${comic.images[0].path}.${comic.images[0].extension}")
                 .placeholder(R.drawable.marvel_logo)
                 .error(R.drawable.raster)
                 .fallback(R.drawable.raster)
-                .into(iv_comic)
+                .into(iv_bkg)
         }
     }
 }

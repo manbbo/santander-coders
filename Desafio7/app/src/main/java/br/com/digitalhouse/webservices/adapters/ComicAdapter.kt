@@ -24,7 +24,7 @@ class ComicAdapter(
 
     override fun onBindViewHolder(holder: ComicView, position: Int) {
         val comic = comics[position]
-        holder.name.text = "${comic.title}"
+        holder.name.text = "#${position.toString()}"
 
         Glide.with(holder.imgCover.context)
             .load("${comic.thumbnail.path}.${comic.thumbnail.extension}")

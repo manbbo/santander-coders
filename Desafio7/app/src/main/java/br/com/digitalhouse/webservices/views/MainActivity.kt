@@ -16,6 +16,7 @@ import br.com.digitalhouse.webservices.models.Results
 import br.com.digitalhouse.webservices.services.Retrofit
 import br.com.digitalhouse.webservices.viewmodels.ComicViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.custom_toolbar.*
 
 class MainActivity : AppCompatActivity(), OnClickItemListener {
     var comicsList = ArrayList<Results>()
@@ -36,10 +37,14 @@ class MainActivity : AppCompatActivity(), OnClickItemListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setSupportActionBar(mytoolbar)
+
+        title = ""
+
         adapter = ComicAdapter(comicsList, this)
 
         rv_comic.adapter = adapter
-        rv_comic.layoutManager = GridLayoutManager(this, 2)
+        rv_comic.layoutManager = GridLayoutManager(this, 3)
 
         viewModel.getAllComics()
         viewModel.comicsList.observe(this) {

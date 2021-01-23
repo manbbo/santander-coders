@@ -1,4 +1,3 @@
-manbbo
 package com.example.desafiofinal
 
 import androidx.appcompat.app.AppCompatActivity

@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Desafiofinal">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.GameDetailsActivity"></activity>
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.SignupActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

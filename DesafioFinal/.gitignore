@@ -2,10 +2,10 @@
 .gradle
 /local.properties
 /.idea
-/app/src/main/java/com/example/desafiofinal/api/Credentials.kt
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
+/app/src/main/java/com/example/desafiofinal/api/Credentials.kt

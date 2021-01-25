@@ -2,6 +2,7 @@
 .gradle
 /local.properties
 /.idea
+/app/src/main/java/com/example/desafiofinal/api/Credentials.kt
 .DS_Store
 /build
 /captures

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "902448044897",
+    "project_id": "desafio4-4b7a7",
+    "storage_bucket": "desafio4-4b7a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902448044897:android:e9f369752c2ca6d7ad4320",
+        "android_client_info": {
+          "package_name": "com.example.desafiofinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902448044897-c0eqjrhghoq7bvavgonu85tsfa7rb9t8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEjFDmRb-pYpEu6CesXp3rAR_M8GcxJ3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902448044897-c0eqjrhghoq7bvavgonu85tsfa7rb9t8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -50,11 +50,13 @@
 
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/editgame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:src="@drawable/ic_edit"
                 android:background="@color/red"
+                android:backgroundTint="@color/red"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_game_name_detailed" />

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiofinal.R
 import com.example.desafiofinal.adapters.GameTileAdapter
 import com.example.desafiofinal.data.GameTileInfo
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var rc_view : RecyclerView
@@ -22,7 +23,12 @@ class HomeActivity : AppCompatActivity() {
         rc_view.adapter = GameTileAdapter(defaultListGameTileInfo(),  this)
         rc_view.layoutManager = GridLayoutManager(this, 2)
         rc_view.setHasFixedSize(true)
-        
+
+        var floating :FloatingActionButton = findViewById(R.id.addgame)
+
+        floating.setOnClickListener {
+            startActivity(Intent(this, GameInfoFillActivity()::class.java))
+        }
     }
 
     private fun initRecycler(listGameTiles: ArrayList<GameTileInfo>){

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Desafiofinal</string>
+
     <!--LOGIN AND SIGNUP-->
     <string name="name">Name</string>
     <string name="email">Email</string>
@@ -8,6 +9,10 @@
     <string name="loginbt">LOG IN</string>
     <string name="createaccbt">Create account</string>
 
+    <string name="year">Created at</string>
+    <string name="description">Description</string>
+
+    <string name="save">SAVE GaME</string>
     <!--HOME-->
     <string name="searchbar">Search Games</string>
     <string name="floatingbt">ADD</string>

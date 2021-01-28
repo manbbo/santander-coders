@@ -1,5 +1,6 @@
 package com.example.desafiofinal.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -36,5 +37,12 @@ class GameDetailsActivity : AppCompatActivity() {
         subtitle.text=game.name
         year.text=game.year.toString()
         description.text = game.description
+
+        floating.setOnClickListener {
+            var intent = Intent(this, GameInfoFillActivity()::class.java)
+            var item = game
+            intent.putExtra("game", item)
+            startActivity(intent)
+        }
     }
 }

@@ -1,40 +1,69 @@
 package com.example.desafiofinal.api
 
-import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.widget.ImageView
-import androidx.core.app.ActivityCompat.startActivityForResult
+import android.util.Log
+import com.example.desafiofinal.data.GameTileInfo
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
-import com.example.desafiofinal.api.Credentials
-import com.google.firebase.storage.StorageReference
-import java.io.ByteArrayOutputStream
 
-class Storage {
-    var store = Firebase.storage(Credentials().URL)
-    var storageRef = store.reference
-    var imagesRef = storageRef.child("image")
 
-    fun uploadFromMemory(imageView : ImageView) : String {
-        var imagePath = ""
-// Get the data from an ImageView as bytes
-        imageView.isDrawingCacheEnabled = true
-        imageView.buildDrawingCache()
-        val bitmap = (imageView.drawable as BitmapDrawable).bitmap
-        val baos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-        val data = baos.toByteArray()
+class Storage (var gameTile : GameTileInfo?) {
+    // Access a Cloud Firestore instance from your Activity
+    val db = Firebase.firestore
 
-        var uploadTask = imagesRef.putBytes(data)
-        uploadTask.addOnFailureListener {
-            // Handle unsuccessful uploads
-        }.addOnSuccessListener { taskSnapshot ->
-            // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
-            // ...
-            imagePath = taskSnapshot.metadata!!.path
+    fun addData() {
+        if (gameTile != null) {
+            val game = hashMapOf(
+                    "name" to gameTile!!.name,
+                    "year" to gameTile!!.year,
+                    "description" to gameTile!!.description,
+                    "image" to gameTile!!.photo
+            )
+
+            db.collection("games").document(gameTile!!.name)
+                    .set(game)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d("FIRESTORE", "DocumentSnapshot successfully written!")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w("FIRESTORE", "Error adding document", e)
+                    }
         }
+    }
 
-        return imagePath
+    fun mergeData() {
+        if (gameTile != null) {
+            val game = hashMapOf(
+                    "name" to gameTile!!.name.replace("-", " "),
+                    "year" to gameTile!!.year,
+                    "description" to gameTile!!.description,
+                    "image" to gameTile!!.photo
+            )
+
+            db.collection("games").document(gameTile!!.name)
+                    .set(game, SetOptions.merge())
+        }
+    }
+    
+    fun getInstance() : Boolean {
+        var instanceFound = false
+        db.collection("games")
+                .document(gameTile!!.name)
+                .get()
+                .addOnSuccessListener { result ->
+                    if (result != null) {
+                        Log.d("FIRESTORE", "DocumentSnapshot data: ${result.data}")
+                        instanceFound = true
+                    } else {
+                        Log.d("FIRESTORE", "No such document")
+                        instanceFound = false
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.w("FIRESTORE", "Error getting documents.", exception)
+                    instanceFound = false
+                }
+
+        return instanceFound
     }
 }

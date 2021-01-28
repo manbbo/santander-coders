@@ -1,20 +1,23 @@
 package com.example.desafiofinal.ui
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.desafiofinal.R
+import com.example.desafiofinal.api.Credentials
+import com.example.desafiofinal.api.Storage
+import com.example.desafiofinal.api.Store
 import com.example.desafiofinal.data.GameTileInfo
 
 class GameInfoFillActivity : AppCompatActivity() {
-    private val REQUEST_TAKE_PHOTO = 0
     private val REQUEST_SELECT_IMAGE_IN_ALBUM = 1
+    lateinit var imageUri : Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,19 +43,41 @@ class GameInfoFillActivity : AppCompatActivity() {
         }
 
         image.setOnClickListener{
-            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             intent.type = "image/*"
             if (intent.resolveActivity(packageManager) != null) {
                 startActivityForResult(intent, REQUEST_SELECT_IMAGE_IN_ALBUM)
             }
         }
 
+        val saveBt : Button = findViewById(R.id.save)
+
+        saveBt.setOnClickListener {
+
+            if (!title.text.toString().isNullOrEmpty() && !year.text.toString().isNullOrEmpty()) {
+                //image store
+                val store = Store(title.text.toString().trim().replace(" ", "-"))
+                store.uploadFromMemory(image)
+                val finalGameInfo = GameTileInfo(title.text.toString().trim(), year.text.toString().toInt(), Credentials().imageURL + "" + title.text.toString().trim().replace(" ", "-") + "?alt=media", description.text.toString())
+
+                // information store
+                var storage = Storage(finalGameInfo)
+
+                if (!storage.getInstance()) {
+                    storage.addData()
+                } else {
+                    storage.mergeData()
+                }
+
+                finish()
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK && requestCode == REQUEST_SELECT_IMAGE_IN_ALBUM) {
-            val imageUri = data?.data
+            imageUri = data?.data!!
             val image : ImageView = findViewById(R.id.game_img)
 
             image.setImageURI(imageUri)

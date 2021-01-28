@@ -1,4 +1,9 @@
 package com.example.desafiofinal.data
 
-class GameTileInfo(val name: String, val year: Int, val photo: Int) {
+import java.io.Serializable
+
+data class GameTileInfo(var name: String,
+                        var year: Int,
+                        var photo: String,
+                        var description : String) :Serializable {
 }

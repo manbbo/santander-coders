@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:id="@+id/game_card"
     tools:context=".ui.GameDetailsActivity">
     <LinearLayout
@@ -80,6 +81,7 @@
                     android:textSize="20dp" />
 
                 <TextView
+                    android:textColor="@color/grey"
                     android:id="@+id/tv_game_year"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -88,6 +90,7 @@
                     android:textSize="20dp" />
 
                 <TextView
+                    android:textColor="@color/grey"
                     android:id="@+id/tv_game_description"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

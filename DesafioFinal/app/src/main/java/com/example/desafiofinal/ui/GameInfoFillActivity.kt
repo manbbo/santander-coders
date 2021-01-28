@@ -31,7 +31,6 @@ class GameInfoFillActivity : AppCompatActivity() {
             Glide.with(this)
                 .load(game.photo)
                 .placeholder(R.drawable.ic_baseline_photo_camera_24)
-                .transition(DrawableTransitionOptions.withCrossFade())
                 .into(image)
         }
     }

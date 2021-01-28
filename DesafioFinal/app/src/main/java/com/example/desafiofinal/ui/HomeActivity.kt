@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiofinal.R
@@ -14,25 +15,34 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var rc_view : RecyclerView
+    private lateinit var data : MutableList<GameTileInfo>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        var emptylist :TextView = findViewById(R.id.empty)
+        data = mutableListOf()
+        //data = defaultListGameTileInfo()
         rc_view = findViewById(R.id.rv_games)
-        rc_view.adapter = GameTileAdapter(defaultListGameTileInfo(),  this)
-        rc_view.layoutManager = GridLayoutManager(this, 2)
-        rc_view.setHasFixedSize(true)
 
+        if (!data.isEmpty() && data != null) {
+
+            rc_view.visibility = View.VISIBLE
+            emptylist.visibility = View.INVISIBLE
+            rc_view.adapter = GameTileAdapter(data, this)
+            rc_view.layoutManager = GridLayoutManager(this, 2)
+            rc_view.setHasFixedSize(true)
+        } else {
+
+            rc_view.visibility = View.INVISIBLE
+            emptylist.visibility = View.VISIBLE
+        }
         var floating :FloatingActionButton = findViewById(R.id.addgame)
 
         floating.setOnClickListener {
             startActivity(Intent(this, GameInfoFillActivity()::class.java))
         }
-    }
-
-    private fun initRecycler(listGameTiles: ArrayList<GameTileInfo>){
-
     }
 
     private fun defaultListGameTileInfo() = arrayListOf(

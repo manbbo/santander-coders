@@ -16,7 +16,7 @@ import com.example.desafiofinal.data.GameTileInfo
 import com.example.desafiofinal.ui.GameDetailsActivity
 import kotlinx.android.synthetic.main.activity_game_details.view.*
 
-class GameTileAdapter (private val games: ArrayList<GameTileInfo>,
+class GameTileAdapter (private val games: MutableList<GameTileInfo>,
                        var ctx: Context) : RecyclerView.Adapter<GameTileAdapter.ViewHolder>() {
     class ViewHolder  (item: View) : RecyclerView.ViewHolder(item){
 

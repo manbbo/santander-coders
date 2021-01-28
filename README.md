@@ -70,7 +70,7 @@ All info about Firestore can be found [here](https://firebase.google.com/docs?au
 
 ## Contributing
 
-1. [Fork it](https://github.com/manbbo/getclub/fork)
+1. [Fork it](https://github.com/manbbo/santander-coders/fork)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)

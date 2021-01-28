@@ -1,6 +1,7 @@
 package com.example.desafiofinal.api
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import com.example.desafiofinal.data.GameTileInfo
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
@@ -65,5 +66,32 @@ class Storage (var gameTile : GameTileInfo?) {
                 }
 
         return instanceFound
+    }
+
+    fun getInstances() : MutableLiveData<MutableList<GameTileInfo>> {
+
+        var gameMap =  MutableLiveData<MutableList<GameTileInfo>>()
+        var gamelistaux : MutableList<GameTileInfo> = arrayListOf()
+
+        db.collection("games")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d("FIRESTORE", "${document.id} => ${document.data}")
+
+                    var gameTile = GameTileInfo(document.data["name"].toString(),
+                        document.data["year"].toString().toInt(),
+                        document.data["image"].toString(),
+                        document.data["description"].toString())
+
+                    gamelistaux.add(gameTile)
+                }
+                gameMap.value = gamelistaux
+            }
+            .addOnFailureListener { exception ->
+                Log.d("FIRESTORE", "Error getting documents: ", exception)
+            }
+
+        return gameMap
     }
 }

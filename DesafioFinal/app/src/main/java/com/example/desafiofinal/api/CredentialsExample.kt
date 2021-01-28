@@ -5,6 +5,8 @@ class CredentialsExample {
         get() = "<<The url of your STORAGE>>"
     val imageURL : String
         get() = "https://firebasestorage.googleapis.com/v0/b/<<Your URL>>/o/"
-    /* The image url can be found on your
-     STORAGE, when you open an Image*/
+
+/* The image url can be found on your
+     STORAGE (it starts with a 'gs://'),
+     or when you open an Image on storage*/
 }

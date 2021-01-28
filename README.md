@@ -7,14 +7,14 @@
 
 ### Show some :heart: and star the repo to support the project
 
-[![GitHub stars](https://img.shields.io/github/stars/manbbo/santander-coders/tree/desafio8.svg?style=social&label=Star)](https://github.com/manbbo/santander-coders/tree/desafio8)
-[![GitHub forks](https://img.shields.io/github/forks/manbbo/santander-coders/tree/desafio8.svg?style=social&label=Fork)](https://github.com/manbbo/santander-coders/tree/desafio8/fork)
-[![GitHub watchers](https://img.shields.io/github/watchers/manbbo/santander-coders/tree/desafio8.svg?style=social&label=Watch)](https://github.com/manbbo/santander-coders/tree/desafio8)
+[![GitHub stars](https://img.shields.io/github/stars/manbbo/santander-coders.svg?style=social&label=Star)](https://github.com/manbbo/santander-coders/tree/desafio8)
+[![GitHub forks](https://img.shields.io/github/forks/manbbo/santander-coders.svg?style=social&label=Fork)](https://github.com/manbbo/santander-coders/tree/desafio8/fork)
+[![GitHub watchers](https://img.shields.io/github/watchers/manbbo/santander-coders.svg?style=social&label=Watch)](https://github.com/manbbo/santander-coders/tree/desafio8)
 [![GitHub followers](https://img.shields.io/github/followers/manbbo.svg?style=social&label=Follow)](https://github.com/manbbo)
 
 ### Explaining Video
 
-<img src="https://github.com/manbbo/GetClub/blob/master/GetClub/screenshots/login.png"  height="400em"/>
+<!--img src="https://github.com/manbbo/GetClub/blob/master/GetClub/screenshots/login.png"  height="400em"/-->
 
 
 ## Usage example

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    tools:context=".ui.GameInfoFillActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="350dp"
+            android:layout_height="370dp"
+            android:padding="20dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/round">
+            <TextView
+                android:layout_marginTop="23dp"
+                android:layout_width="match_parent"
+                android:text="@string/name"
+                android:textColor="@color/grey"
+                android:textSize="8pt"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/game_nm"
+                android:layout_width="match_parent"
+                android:textColorHint="@color/blue"
+                android:hint="Ex: God of War"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:text="@string/year"
+                android:textColor="@color/grey"
+                android:textSize="8pt"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/game_yr"
+                android:layout_width="match_parent"
+                android:textColorHint="@color/blue"
+                android:hint="Ex: 2019"
+                android:textColor="@color/blue"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:text="@string/description"
+                android:textColor="@color/grey"
+                android:textSize="8pt"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/game_descr"
+                android:layout_width="match_parent"
+                android:gravity="start"
+                android:textColorHint="@color/blue"
+                android:textColor="@color/blue"
+                android:layout_height="80dp"/>
+
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:text="@string/save"
+                android:layout_marginBottom="10dp"
+
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:background="@color/red"/>
+
+        </LinearLayout>
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:id="@+id/game_img"
+            android:clickable="true"
+
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_baseline_photo_camera_24"
+            app:civ_border_color="@color/red"
+            app:civ_border_width="4dp"/>
+    </FrameLayout>
+
+</ScrollView>

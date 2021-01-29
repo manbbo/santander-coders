@@ -14,18 +14,18 @@ import com.example.desafiofinal.api.Credentials
 import com.example.desafiofinal.api.Storage
 import com.example.desafiofinal.api.Store
 import com.example.desafiofinal.data.GameTileInfo
+import com.google.firebase.firestore.ktx.toObject
 
 class GameInfoFillActivity : AppCompatActivity() {
     private val REQUEST_SELECT_IMAGE_IN_ALBUM = 1
     lateinit var imageUri : Uri
-    lateinit var gameTileOld : GameTileInfo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_info_fill)
 
         val bundle: Bundle? = intent.extras
-        val game = bundle?.getSerializable("game") as? GameTileInfo
+        var game = bundle?.getSerializable("game") as? GameTileInfo
 
         val title : EditText = findViewById(R.id.game_nm)
         val image: ImageView = findViewById(R.id.game_img)
@@ -54,20 +54,31 @@ class GameInfoFillActivity : AppCompatActivity() {
         val saveBt : Button = findViewById(R.id.save)
 
         saveBt.setOnClickListener {
-
             if (!title.text.toString().isNullOrEmpty() && !year.text.toString().isNullOrEmpty()) {
                 //image store
-                val store = Store(title.text.toString().trim().replace(" ", "-"))
+                    if (game == null)
+                        game = GameTileInfo(title.text.toString().trim().toLowerCase().replace(" ", "-"),
+                                title.text.toString().trim(), year.text.toString().toInt(),
+                            Credentials().imageURL + "" + title.text.toString().trim().toLowerCase().replace(" ", "-") + "?alt=media",
+                            description.text.toString().trim())
+                    else {
+                        game!!.name = title.text.toString().trim()
+                        //game!!.ID = (game!!.ID) ? title.text.toString().trim() : title.text.toString().trim()
+                        game!!.photo = Credentials().imageURL + "" + game!!.ID + "?alt=media"
+                        game!!.year = year.text.toString().toInt()
+                        game!!.description = description.text.toString().trim()
+                    }
+
+                val store = Store(game!!.ID)
                 store.uploadFromMemory(image)
-                val finalGameInfo = GameTileInfo(title.text.toString().trim(), year.text.toString().toInt(), Credentials().imageURL + "" + title.text.toString().trim().replace(" ", "-") + "?alt=media", description.text.toString())
 
                 // information store
-                var storage = Storage(finalGameInfo)
+                var storage = Storage(game)
 
-                if (!storage.getInstance()) {
-                    storage.addData()
+                if (game!!.ID.isNullOrEmpty()) {
+                     storage.addData()
                 } else {
-                    storage.addData()
+                        storage.mergeData()
                 }
 
                 finish()

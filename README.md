@@ -13,7 +13,7 @@
 [![GitHub followers](https://img.shields.io/github/followers/manbbo.svg?style=social&label=Follow)](https://github.com/manbbo)
 
 ### Explaining Video
-[![Watch the video](https://img.youtube.com/vi/ACE1jYd7HjA/maxresdefault.jpg)](https://youtu.be/ACE1jYd7HjA)
+[![Watch the video](https://img.youtube.com/vi/ACE1jYd7HjA/hqdefault.jpg)](https://youtu.be/ACE1jYd7HjA)
 
 ## Usage example
 

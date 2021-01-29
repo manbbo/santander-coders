@@ -13,9 +13,7 @@
 [![GitHub followers](https://img.shields.io/github/followers/manbbo.svg?style=social&label=Follow)](https://github.com/manbbo)
 
 ### Explaining Video
-
-<!--img src="https://github.com/manbbo/GetClub/blob/master/GetClub/screenshots/login.png"  height="400em"/-->
-
+[![Watch the video](https://img.youtube.com/vi/ACE1jYd7HjA/maxresdefault.jpg)](https://youtu.be/ACE1jYd7HjA)
 
 ## Usage example
 

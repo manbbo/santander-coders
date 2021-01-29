@@ -18,6 +18,7 @@ import com.example.desafiofinal.data.GameTileInfo
 class GameInfoFillActivity : AppCompatActivity() {
     private val REQUEST_SELECT_IMAGE_IN_ALBUM = 1
     lateinit var imageUri : Uri
+    lateinit var gameTileOld : GameTileInfo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,7 +67,7 @@ class GameInfoFillActivity : AppCompatActivity() {
                 if (!storage.getInstance()) {
                     storage.addData()
                 } else {
-                    storage.mergeData()
+                    storage.addData()
                 }
 
                 finish()

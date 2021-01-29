@@ -21,7 +21,6 @@ class LoginActivity : AppCompatActivity() {
 
         createbt.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
-            finish()
         }
     }
 }

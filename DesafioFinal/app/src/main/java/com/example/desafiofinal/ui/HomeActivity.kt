@@ -30,6 +30,50 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        var emptylist :TextView = findViewById(R.id.empty)
+
+        viewModel.getListGames()
+
+        rc_view = findViewById(R.id.rv_games)
+
+        viewModel.listGames.observe(this) {
+            //if (!it.isNullOrEmpty()) {
+            rc_view.visibility = View.VISIBLE
+            emptylist.visibility = View.INVISIBLE
+            rc_view.adapter = GameTileAdapter(it, this)
+            rc_view.layoutManager = GridLayoutManager(this, 2)
+            rc_view.setHasFixedSize(true)
+            //} else {
+            //   rc_view.visibility = View.INVISIBLE
+            //    emptylist.visibility = View.VISIBLE
+            //}
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        var emptylist :TextView = findViewById(R.id.empty)
+
+        viewModel.getListGames()
+
+        rc_view = findViewById(R.id.rv_games)
+
+        viewModel.listGames.observe(this) {
+            //if (!it.isNullOrEmpty()) {
+            rc_view.visibility = View.VISIBLE
+            emptylist.visibility = View.INVISIBLE
+            rc_view.adapter = GameTileAdapter(it, this)
+            rc_view.layoutManager = GridLayoutManager(this, 2)
+            rc_view.setHasFixedSize(true)
+            //} else {
+            //   rc_view.visibility = View.INVISIBLE
+            //    emptylist.visibility = View.VISIBLE
+            //}
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)

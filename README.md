@@ -1,8 +1,8 @@
-# Firebase App (DESAFIO FINAL)
+# Santander Coders Repo
 
 <!--![](Thumbnail.png)-->
 
-> The Firebase App is an app made for DigitalHouse Kotlin course, that focuses on utilizing two items from Firebase: Firestore and Firebase Cloud Storage.
+> This repo englobes all the challenges and things made in class, and the DESAFIO FINAL folder is the LAST CHALLENGE, using firebase, navigation, activities and MVVM (patterns)
 
 
 ### Show some :heart: and star the repo to support the project
@@ -11,6 +11,8 @@
 [![GitHub forks](https://img.shields.io/github/forks/manbbo/santander-coders.svg?style=social&label=Fork)](https://github.com/manbbo/santander-coders)
 [![GitHub watchers](https://img.shields.io/github/watchers/manbbo/santander-coders.svg?style=social&label=Watch)](https://github.com/manbbo/santander-coders)
 [![GitHub followers](https://img.shields.io/github/followers/manbbo.svg?style=social&label=Follow)](https://github.com/manbbo)
+
+# About DESAFIO FINAL
 
 ### Explaining Video
 [![Watch the video](https://img.youtube.com/vi/ACE1jYd7HjA/hqdefault.jpg)](https://youtu.be/ACE1jYd7HjA)
